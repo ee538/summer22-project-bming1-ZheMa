@@ -59,6 +59,19 @@ TEST(TrojanMapTest, Autocomplete)
     }
   }
   EXPECT_EQ(success, gt.size());
+
+ // Test the non-exist case
+  names = m.Autocomplete("aaa");
+  success = 0;
+  for (auto &n : names)
+  {
+    EXPECT_EQ(gt.count(n) > 0, true) << n + " is not in gt.";
+    if (gt.count(n) > 0)
+    {
+      success++;
+    }
+  }
+  EXPECT_EQ(success, 0); 
 }
 
 
