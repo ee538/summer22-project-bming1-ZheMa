@@ -1,4 +1,6 @@
 #include "trojanmap.h"
+#include <algorithm>
+using namespace std;
 
 //-----------------------------------------------------
 // TODO: Student should implement the following:
@@ -74,7 +76,23 @@ std::pair<double, double> TrojanMap::GetPosition(std::string name) {
  * CalculateEditDistance: Calculate edit distance between two location names
  *
  */
-int TrojanMap::CalculateEditDistance(std::string a, std::string b) { return 0; }
+int TrojanMap::CalculateEditDistance(std::string a, std::string b) { 
+  int len_a = a.length();
+  int len_b = b.length();
+  if (len_a == 0){
+    return len_b;
+  }
+  if (len_b == 0){
+    return len_a;
+  }
+  if (a[len_a-1]== b[len_b-1]){
+    return TrojanMap::CalculateEditDistance (a.substr(0,len_a-1),
+                                             b.substr(0,len_b-1));
+  }
+  return 1+min(min(CalculateEditDistance (a.substr(0,len_a-1),b.substr(0,len_b-1)),
+               CalculateEditDistance (a.substr(0,len_a),b.substr(0,len_b-1))),
+               CalculateEditDistance (a.substr(0,len_a-1),b.substr(0,len_b))); 
+  return 0; }
 
 /**
  * FindClosestName: Given a location name, return the name with smallest edit
@@ -83,6 +101,7 @@ int TrojanMap::CalculateEditDistance(std::string a, std::string b) { return 0; }
  * @param  {std::string} name          : location name
  * @return {std::string} tmp           : similar name
  */
+
 std::string TrojanMap::FindClosestName(std::string name) {
   std::string tmp = "";
   return tmp;

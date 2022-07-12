@@ -96,3 +96,12 @@ TEST(TrojanMapTest, FindPosition) {
   std::pair<double, double> gt4(-1, -1);
   EXPECT_EQ(position, gt4);
 }
+
+// Test CalculateEditDistance function
+TEST(TrojanMapTest, CalculateEditDistance) {
+  TrojanMap m;
+  EXPECT_EQ(m.CalculateEditDistance("raphs", "raphs1"), 1);
+  EXPECT_EQ(m.CalculateEditDistance("raphs", " "), 5);
+  EXPECT_EQ(m.CalculateEditDistance("raaphs", "raphs"), 1);
+}
+
