@@ -104,8 +104,24 @@ int TrojanMap::CalculateEditDistance(std::string a, std::string b) {
 
 std::string TrojanMap::FindClosestName(std::string name) {
   std::string tmp = "";
+  int k,k_1;
+  
+  k_1 = CalculateEditDistance(tmp,name);
+
+  for(auto &node:data){
+
+  if(node.second.name.empty())
+    {continue;}
+    
+  k = CalculateEditDistance(name, node.second.name);
+  
+  if(k<k_1){
+    k_1=k;
+    tmp = node.second.name;
+  }}
   return tmp;
 }
+
 
 /**
  * Autocomplete: Given a parital name return all the possible locations with
@@ -211,6 +227,7 @@ double TrojanMap::CalculatePathLength(const std::vector<std::string> &path) {
 std::vector<std::string> TrojanMap::CalculateShortestPath_Dijkstra(
     std::string location1_name, std::string location2_name) {
   std::vector<std::string> path;
+  string;
   return path;
 }
 
