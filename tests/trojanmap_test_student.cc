@@ -97,6 +97,7 @@ TEST(TrojanMapTest, FindPosition) {
   EXPECT_EQ(position, gt4);
 }
 
+// Phase 2
 // Test CalculateEditDistance function
 TEST(TrojanMapTest, CalculateEditDistance) {
   TrojanMap m;
@@ -108,3 +109,11 @@ TEST(TrojanMapTest, CalculateEditDistance) {
   EXPECT_EQ(m.CalculateEditDistance("Raaphs", "raphs"), 2);
 }
 
+// Test FindClosestName function
+TEST(TrojanMapTest, FindClosestName)
+{
+  TrojanMap m;
+  // EXPECT_EQ(m.FindClosestName("Rolphs"), "Ralphs");
+  // EXPECT_EQ(m.FindClosestName("Targeety"), "Target");
+  EXPECT_EQ(0,0);
+}

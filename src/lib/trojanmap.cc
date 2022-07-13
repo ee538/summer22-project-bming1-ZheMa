@@ -109,22 +109,27 @@ int TrojanMap::CalculateEditDistance(std::string a, std::string b) {
  */
 
 std::string TrojanMap::FindClosestName(std::string name) {
-  std::string tmp = "";
+  std::transform(name.begin(), name.end(), name.begin(), [](unsigned char c)
+                 { return std::tolower(c); });
   int k,k_1;
+  std::string tmp;
   
-  k_1 = CalculateEditDistance(tmp,name);
+  k_1 = INT_MAX;
 
   for(auto &node:data){
+    std::string tmp = node.second.name;
 
-  if(node.second.name.empty())
-    {continue;}
-    
-  k = CalculateEditDistance(name, node.second.name);
-  
-  if(k<k_1){
-    k_1=k;
-    tmp = node.second.name;
-  }}
+    if(tmp!="")
+      {
+        std::transform(tmp.begin(), tmp.end(), tmp.begin(), [](unsigned char c)
+                     { return std::tolower(c); });
+        k = CalculateEditDistance(name, tmp);
+        if(k<k_1){
+          tmp = node.second.name;
+          k_1=k;
+        }
+                     }
+  }
   return tmp;
 }
 
@@ -161,7 +166,9 @@ std::vector<std::string> TrojanMap::Autocomplete(std::string name) {
  *
  * @return {std::vector<std::string>}  : all unique location categories
  */
-std::vector<std::string> TrojanMap::GetAllCategories() {}
+std::vector<std::string> TrojanMap::GetAllCategories() {
+  return {};
+}
 
 /**
  * GetAllLocationsFromCategory: Return all the locations of the input category (i.e.
@@ -172,7 +179,9 @@ std::vector<std::string> TrojanMap::GetAllCategories() {}
  * @return {std::pair<double, double>}     : (lat, lon)
  */
 std::pair<double, double> TrojanMap::GetAllLocationsFromCategory(
-    std::string category) {}
+    std::string category) {
+      return {};
+    }
 
 /**
  * GetLocationRegex: Given the regular expression of a location's name, your
@@ -183,7 +192,9 @@ std::pair<double, double> TrojanMap::GetAllLocationsFromCategory(
  * names
  * @return {std::pair<double, double>}     : (lat, lon)
  */
-std::pair<double, double> TrojanMap::GetLocationRegex(std::regex location) {}
+std::pair<double, double> TrojanMap::GetLocationRegex(std::regex location) {
+  return {};
+}
 
 /**
  * CalculateDistance: Get the distance between 2 nodes.
@@ -233,9 +244,12 @@ double TrojanMap::CalculatePathLength(const std::vector<std::string> &path) {
 std::vector<std::string> TrojanMap::CalculateShortestPath_Dijkstra(
     std::string location1_name, std::string location2_name) {
   std::vector<std::string> path;
+<<<<<<< HEAD
   string start_point = GetID(location1_name);
   string end_point = GetID(location2_name);
   
+=======
+>>>>>>> b0d27d5f78a16af588294b463154b0c2e728bd53
   return path;
 }
 
