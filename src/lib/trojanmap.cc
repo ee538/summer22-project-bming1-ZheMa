@@ -12,7 +12,15 @@ using namespace std;
  * @param  {std::string} id : location id
  * @return {double}         : latitude
  */
-double TrojanMap::GetLat(const std::string &id) { return 0; }
+double TrojanMap::GetLat(const std::string &id) { 
+  bool flag = data.count(id);
+  if (flag == false)
+  {
+    return -1;
+  }
+  Node node = data[id];
+  return node.lat;
+ }
 
 /**
  * GetLon: Get the longitude of a Node given its id. If id does not exist,
@@ -21,7 +29,15 @@ double TrojanMap::GetLat(const std::string &id) { return 0; }
  * @param  {std::string} id : location id
  * @return {double}         : longitude
  */
-double TrojanMap::GetLon(const std::string &id) { return 0; }
+double TrojanMap::GetLon(const std::string &id) { 
+  bool flag = data.count(id);
+  if (flag == false)
+  {
+    return -1;
+  }
+  Node node = data[id];
+  return node.lon; 
+}
 
 /**
  * GetName: Get the name of a Node given its id. If id does not exist, return
@@ -30,7 +46,15 @@ double TrojanMap::GetLon(const std::string &id) { return 0; }
  * @param  {std::string} id : location id
  * @return {std::string}    : name
  */
-std::string TrojanMap::GetName(const std::string &id) { return ""; }
+std::string TrojanMap::GetName(const std::string &id) { 
+  bool flag = data.count(id);
+  if (flag == false)
+  {
+    return "";
+  }
+  Node node = data[id];
+  return node.name;
+  }
 
 /**
  * GetNeighborIDs: Get the neighbor ids of a Node. If id does not exist, return
@@ -40,7 +64,16 @@ std::string TrojanMap::GetName(const std::string &id) { return ""; }
  * @return {std::vector<std::string>}  : neighbor ids
  */
 std::vector<std::string> TrojanMap::GetNeighborIDs(const std::string &id) {
-  return {};
+  Node node = data[id];
+  bool flag = data.count(id);
+  if (flag == false)
+  {
+    return {};
+  }
+  
+  std::vector<std::string> nb = node.neighbors;
+  
+  return nb;
 }
 
 /**
@@ -52,6 +85,7 @@ std::vector<std::string> TrojanMap::GetNeighborIDs(const std::string &id) {
  */
 std::string TrojanMap::GetID(const std::string &name) {
   std::string res = "";
+  
   for(auto it = data.begin(); it != data.end(); it++){
     Node node = it->second;
     if(node.name == name){
@@ -244,12 +278,9 @@ double TrojanMap::CalculatePathLength(const std::vector<std::string> &path) {
 std::vector<std::string> TrojanMap::CalculateShortestPath_Dijkstra(
     std::string location1_name, std::string location2_name) {
   std::vector<std::string> path;
-<<<<<<< HEAD
   string start_point = GetID(location1_name);
   string end_point = GetID(location2_name);
   
-=======
->>>>>>> b0d27d5f78a16af588294b463154b0c2e728bd53
   return path;
 }
 
