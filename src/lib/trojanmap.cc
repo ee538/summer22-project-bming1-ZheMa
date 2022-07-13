@@ -52,6 +52,12 @@ std::vector<std::string> TrojanMap::GetNeighborIDs(const std::string &id) {
  */
 std::string TrojanMap::GetID(const std::string &name) {
   std::string res = "";
+  for(auto it = data.begin(); it != data.end(); it++){
+    Node node = it->second;
+    if(node.name == name){
+      return node.id;
+    }
+  }
   return res;
 }
 
@@ -227,7 +233,9 @@ double TrojanMap::CalculatePathLength(const std::vector<std::string> &path) {
 std::vector<std::string> TrojanMap::CalculateShortestPath_Dijkstra(
     std::string location1_name, std::string location2_name) {
   std::vector<std::string> path;
-  string;
+  string start_point = GetID(location1_name);
+  string end_point = GetID(location2_name);
+  
   return path;
 }
 

@@ -103,5 +103,8 @@ TEST(TrojanMapTest, CalculateEditDistance) {
   EXPECT_EQ(m.CalculateEditDistance("raphs", "raphs1"), 1);
   EXPECT_EQ(m.CalculateEditDistance("raphs", " "), 5);
   EXPECT_EQ(m.CalculateEditDistance("raaphs", "raphs"), 1);
+  EXPECT_EQ(m.CalculateEditDistance("horse", "ros"), 3);
+  EXPECT_EQ(m.CalculateEditDistance("intention", "execution"), 5);
+  EXPECT_EQ(m.CalculateEditDistance("Raaphs", "raphs"), 2);
 }
 
