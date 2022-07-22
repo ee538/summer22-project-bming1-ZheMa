@@ -132,7 +132,7 @@ int TrojanMap::CalculateEditDistance(std::string a, std::string b)
  */
 std::string TrojanMap::FindClosestName(std::string name)
 {
-  int min = INT_MAX;
+  // int min = INT_MAX;
   std::string res;
   // std::transform(name.begin(), name.end(), name.begin(), [](unsigned char c)
   //                { return std::tolower(c); });
