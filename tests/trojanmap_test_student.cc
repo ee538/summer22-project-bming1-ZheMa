@@ -7,7 +7,7 @@
 
 // Phase 1
 // Test Autocomplete function
-TEST(TrojanMapTest, Autocomplete)
+/*TEST(TrojanMapTest, Autocomplete)
 {
   TrojanMap m;
   // Test the simple case
@@ -108,12 +108,11 @@ TEST(TrojanMapTest, CalculateEditDistance) {
   EXPECT_EQ(m.CalculateEditDistance("intention", "execution"), 5);
   EXPECT_EQ(m.CalculateEditDistance("Raaphs", "raphs"), 2);
 }
+*/
+
 
 // Test FindClosestName function
-TEST(TrojanMapTest, FindClosestName)
-{
+TEST(TrojanMapTest, FindClosestName) {
   TrojanMap m;
-  // EXPECT_EQ(m.FindClosestName("Rolphs"), "Ralphs");
-  // EXPECT_EQ(m.FindClosestName("Targeety"), "Target");
-  EXPECT_EQ(0,0);
+  EXPECT_EQ(m.FindClosestName("Targeety"), "Target");
 }
