@@ -79,7 +79,7 @@ public:
     //  there should be no duplicates in the output.
     std::vector<std::string> GetAllCategories();
 
-    std::pair<double, double> GetAllLocationsFromCategory(std::string category);
+    std::vector<std::pair <double, double>>GetAllLocationsFromCategory(std::string category);
 
     std::pair<double, double> GetLocationRegex(std::regex location);
 
