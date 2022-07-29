@@ -320,6 +320,73 @@ std::vector<std::string> TrojanMap::CalculateShortestPath_Dijkstra(
     std::string location1_name, std::string location2_name)
 {
   std::vector<std::string> path;
+  std::string source = GetID(location1_name);
+  std::string target = GetID(location2_name);
+  if (location1_name.empty() || location2_name.empty() || source.empty() || target.empty())
+  {
+    return path;
+  }
+  std::priority_queue<std::pair<double, std::string>,
+                      std::vector<std::pair<double, std::string>>,
+                      std::greater<std::pair<double, std::string>>>
+      q;
+  std::map<std::string, double> distances;
+  std::map<std::string, int> marks;
+  std::map<std::string, std::string> pre;
+  distances[source] = 0.0;
+  q.push(std::make_pair(0.0, source));
+  while (!q.empty())
+  {
+    std::string u = q.top().second;
+    q.pop();
+    while (marks[u] == 2 && !q.empty())
+    {
+      u = q.top().second;
+      q.pop();
+    }
+    marks[u] = 1;
+
+    if (u == target)
+    {
+      break;
+    }
+
+    for (auto &child : data[u].neighbors)
+    {
+      if (marks.find(child) == marks.end())
+      {
+        if (distances.find(child) == distances.end())
+        {
+          double alt = distances[u] + CalculateDistance(u, child);
+          distances[child] = alt;
+          q.push(std::make_pair(alt, child));
+          pre[child] = u;
+        }
+        else
+        {
+          double alt = distances[u] + CalculateDistance(u, child);
+          if (distances[child] > alt)
+          {
+            distances[child] = alt;
+            q.push(std::make_pair(alt, child));
+            pre[child] = u;
+          }
+        }
+      }
+    }
+    marks[u] = 2;
+  }
+
+  if (marks[target] == 1)
+  {
+    path.push_back(target);
+    while (target != source)
+    {
+      target = pre[target];
+      path.push_back(target);
+    }
+    std::reverse(path.begin(), path.end());
+  }
   // string start_point = GetID(location1_name);
   // string end_point = GetID(location2_name);
   // map<string, double> dis_map;                        // distance from other nodes to the starting point
@@ -401,7 +468,7 @@ std::vector<std::string> TrojanMap::CalculateShortestPath_Dijkstra(
 
   //     path.push_back(start_point);
   //     std::reverse(std::begin(path), std::end(path));
-       return path;
+  return path;
   //   }
   // }
 }
