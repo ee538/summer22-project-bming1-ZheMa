@@ -206,6 +206,13 @@ std::vector<std::string> Autocomplete(std::string name);
 
 We consider the names of nodes as the locations. Implement a method to type the partial name of the location and return a list of possible locations with partial name as prefix. Please treat uppercase and lower case as the same character.
 
+Method:
+1. We traverse all nodes in the map.
+   
+2. We transform the lower letters to upper letters.
+3. Skip the nodes whose size are less than the size of input.
+4. Compare the nodes that have same letters of input from beginning.
+   
 Example:
 
 Input: "Chi" \
@@ -236,6 +243,7 @@ Time taken by function: 2 ms
 ```
 
 - What is the runtime of your algorithm? 
+- A: We need to traverse all nodes in the data, so the time complexity is O(n).
 - (Optional) Can you do it faster than `O(n)`?
 
 ## Item 2-1: Find the place's coordinates in the Map (Phase 1)
@@ -245,6 +253,10 @@ std::pair<double, double> GetPosition(std::string name);
 ```
 
 Given a location name, return the latitude and longitude. There are no duplicated location names. You should mark the given locations on the map. If the location does not exist, return (-1, -1). The algorithm is case-sensitive.
+
+Method:
+1. We traverse all nodes in the map.
+2. Return the lat and lon of the input node.
 
 Example:
 
@@ -284,6 +296,9 @@ For example, if I type *Rolphs*, I should get a warning like "Did you mean *Ralp
 
 Write a dynamic programming solution to calculate edit distance. 
 
+Method:
+1. TBW
+
 ```c++
 std::string FindClosestName(std::string name);
 ```
@@ -299,6 +314,9 @@ Output: 1
 
 
 In the user interface of your program, you should show the names that have the minimum edit distance to the name that the user entered.
+
+Method:
+1. TBW
 
 Example:
 
@@ -329,6 +347,9 @@ Some of the locations have category types (`attributes` field in `data.csv` file
 
 In this section, your program should print all available categories among all existing categories in the map. There should be no duplicates in the output.
 
+Method:
+1. TBW
+
 ## Item 4: Get All Locations In A Category (Phase 2)
 
 ```c++
@@ -336,6 +357,9 @@ std::pair<double, double> GetAllLocationsFromCategory(std::string category);
 ```
 
 In this section if the user entries a category, the program prints all locations that match that category. For example, if there is a category called "Grocery", your program should print all locations that match the "Grocery" category. 
+
+Method:
+1. TBW
 
 ## Item 5: Get Locations Using A Regular Expression (Phase 2)
 
@@ -346,6 +370,9 @@ std::pair<double, double> GetLocationRegex(std::regex location);
 In this section if the user enters a [regular expression](https://en.wikipedia.org/wiki/Regular_expression), they should see all locations that match that regular expression.
 
 Your program should also verify if the input regular expression was correct.
+
+Method:
+1. TBW
 
 
 ## Item 6: CalculateShortestPath between two places (Phase 2)
@@ -361,13 +388,22 @@ Given 2 locations A and B, find the best route from A to B. The distance between
 
 Please report and compare the time spent by these algorithms.
 
+Method of Dijkstra:
+1. We use priority queue to store minimum distance, path to store IDs, and mark the visited node as 2, being visited node as 1.
+2. Set the initial distance as 0.0 and make pair to the initial node.
+3. Pop out the min distance; then traverse all the neighbor nodes. Compare the new distance with the old distance and store the smaller one. We need to avoid the infinite loop(0 distance or negative distance). We use pre to store previous node.
+4. Do the loop until we visit all the nodes.
+   
+Method of Bellman-Ford:
+1. TBW
+
 **You should create a table like below, which includes the runtime of the algorithm for several examples.**
 
 | Point A to Point B      | Dijkstra | Bellman Ford| Bellman Ford optimized|
 | -------------------- | ----------- |-------|-----|
 |                      |  t1         | t2    |   t3  |
 
-Your table should show have at least 15 rows.
+Reason: the time complexity of Dijkstra is O(m logn + n logn), and the time complexity of Bellman_Ford is O(n*m). When the number of nodes is large like here 18359, the time between them has a huge difference. And because we can stop early, the longer the path is, the longer the running time will be.
 
 Example
 ```
@@ -406,6 +442,13 @@ In this section, we use a square-shaped subgraph of the original graph by using 
 Then try to determine if there is a cycle path in the that subgraph.
 If it does, return true and report the path of the cycle on the map. Otherwise return false.
 
+Method:
+1. inSquare function checks whether one node is in the square and GetSubgraph function gets all of nodes in the square.
+2. We create a helper function to detect whether there is a circle based on DFS algorithm. We mark the visited nodes and when the child node is not parent node and it is visited, there is a circle.
+3. We traverse all nodes to run helper function to detect circle.
+   
+Examples:
+TBW
 **Your report should include at least five examples.**
 
 ## Item 8: Topological Sort (Phase 2)
@@ -446,6 +489,13 @@ Hint:
 - If you do not have ```ReadLocationsFromCSVFile``` and ```ReadDependenciesFromCSVFile``` functions ready yet, you can just press enter when it asks you filenames. It will call the default locations and dependencies.
 - The locations are actually nodes, and the dependencies could be directed edges. You may want to first construct a DAG and then implement topological sort algorithm to get the route.
 
+Method:
+1. Finish ReadLocationsFromCSVFile and ReadDependenciesFromCSVFile function to read location and dependencies.
+2. Create an unordered map: Edge_map to store adjacency infomation.
+3. Create a circle detection function for directed graph.
+4. Inplement topological sorting helper function based on DFS algorithm. This will traverse all nodes by dependencies.
+5. We traverse all nodes to run helper function to perform topological sorting.
+   
 Note
 - **Your report should show several examples of topological sort with at least 5 to 10 nodes.**
 
@@ -463,7 +513,8 @@ Time taken by function: 2 ms
 <p align="center"><img src="img/TopologicalSort.png" alt="TSP" width="500"/></p>
 
 In the user interface, we read the locations and dependencies from `topologicalsort_dependencies.csv` and `topologicalsort_locations.csv` to modify your input there.
-
+Examples:
+TBW
 
 ## Item 9: The Traveling Trojan Problem (AKA Traveling Salesman!) (Phase 3)
 
@@ -498,6 +549,13 @@ Show the routes on the map. For each intermediate solution, create a new plot. Y
 
 We will randomly select N points in the map and run your program.
 
+Methods for Brute force and Brute force with backtracking:
+1. We create a helper function TravellingTrojan_helper to set base case and determine whether use backtracking or not. If using backtracking, we will not go deep if current cost is bigger than the stored cost. Then we traverse all nodes to find the path that has minimum cost.
+2. In the TravelingTrojan_Brute_force and TravelingTrojan_Backtracking function, we start from the first node and set the isBacktracking condition to run the helper function.
+   
+Methods for 2-opt:
+1. We use TwoOptSwap function to inverse the order of certain nodes.
+2. In the TravelingTrojan_2opt, we set 2 loops to travel i and j nodes as inversed order nodes for all nodes, and compare their costs to find the minimum cost path.
 ```shell
 **************************************************************
 * 9. Traveling salesman problem                              
@@ -566,6 +624,11 @@ All attributes:
 
 Please report and compare the time spent by this algorithm and show the points on the map.
 
+Method:
+1. We use a priority queue to define max heap for this problem.
+2. Traverse all nodes to find whether it's centre or not. Calculate the distance between the centre node and nodes that satisfy the attributes. If the distance is less than radius, start k-nearest sorting.
+3. At last, we reverse the result.
+   
 ```shell
 **************************************************************
 * 10. Find Nearby                                    
