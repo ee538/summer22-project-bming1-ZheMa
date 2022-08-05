@@ -777,7 +777,7 @@ there exists a cycle in the subgraph
 **************************************************************
 Time taken by function: 0 ms
 ```
-<p align="center"><img src="img/7image4.png" alt="7image4" width="500"/></p>
+<p align="center"><img src="img/7image5.png" alt="7image5" width="500"/></p>
 
 **Your report should include at least five examples.**
 
@@ -901,7 +901,7 @@ Adams Normandie Historic District
 **************************************************************
 Time taken by function: 0 ms
 ```
-<p align="center"><img src="img/8_3.png" alt="8_3" width="500"/></p>
+<p align="center"><img src="img/8_4.png" alt="8_4" width="500"/></p>
 
 ## Item 9: The Traveling Trojan Problem (AKA Traveling Salesman!) (Phase 3)
 
@@ -979,11 +979,49 @@ The distance of the path is:7.94756 miles
 You could find your animation at src/lib/output_2opt.avi.     
 Time taken by function: 0 ms
 ```
-
 <p align="center"><img src="img/TSP.png" alt="TSP" width="500"/></p>
 
 <p align="center"><img src="img/output.gif" alt="TSP videos" width="500"/></p>
 
+Example 1:
+```
+* 9. Traveling salesman problem                              
+**************************************************************
+
+In this task, we will select N random points on the map and you need to find the path to travel these points and back to the start point.
+
+Please input the number of the places:8
+"6788402767","123241963","7225140903","8410844387","6804857547","4835551066","8566199543","2514541803",
+Calculating ...
+*************************Results******************************
+TravelingTrojan_Brute_force
+"6788402767","7225140903","4835551066","123241963","8410844387","6804857547","2514541803","8566199543","6788402767",
+The distance of the path is:6.97948 miles
+**************************************************************
+You could find your animation at src/lib/output0.avi.          
+Time taken by function: 40 ms
+
+Calculating ...
+*************************Results******************************
+TravelingTrojan_Backtracking
+"6788402767","7225140903","4835551066","123241963","8410844387","6804857547","2514541803","8566199543","6788402767",
+The distance of the path is:6.97948 miles
+**************************************************************
+You could find your animation at src/lib/output0_backtracking.avi.
+Time taken by function: 20 ms
+
+Calculating ...
+*************************Results******************************
+TravelingTrojan_2opt
+"6788402767","7225140903","4835551066","123241963","8410844387","6804857547","2514541803","8566199543","6788402767",
+The distance of the path is:6.97948 miles
+**************************************************************
+You could find your animation at src/lib/output0_2opt.avi.     
+Time taken by function: 8 ms
+```
+<p align="center"><img src="img/9_8.png" alt="TSP" width="500"/></p>
+
+<p align="center"><img src="img/9_8.gif" alt="TSP videos" width="500"/></p>
 
 ## Item 10: Find Nearby (Phase 3)
 
