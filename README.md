@@ -244,9 +244,42 @@ Chevron
 **************************************************************
 Time taken by function: 2 ms
 ```
+Example 1:
+```
+* 1. Autocomplete                                             
+**************************************************************
 
+Please input a partial location:Ral
+*************************Results******************************
+Ralphs
+**************************************************************
+Time taken by function: 6 ms
+```
+Example 2:
+```
+* 1. Autocomplete                                             
+**************************************************************
+
+Please input a partial location:Te 
+*************************Results******************************
+No matched locations.
+**************************************************************
+Time taken by function: 7 ms
+```
+Example 3:
+```
+* 1. Autocomplete                                             
+**************************************************************
+
+Please input a partial location:Ta
+*************************Results******************************
+Tap Two Blue
+Target
+**************************************************************
+Time taken by function: 5 ms
+```
 - What is the runtime of your algorithm? 
-- Ans: We need to traverse all nodes in the data, so the time complexity is O(n).
+ Ans: We need to traverse all nodes in the data, so the time complexity is O(n).
 - (Optional) Can you do it faster than `O(n)`?
 
 ## Item 2-1: Find the place's coordinates in the Map (Phase 1)
@@ -279,6 +312,45 @@ Time taken by function: 1 ms
 ```
 
 <p align="center"><img src="img/Target.png" alt="Target" width="500"/></p>
+
+Example 1:
+```
+* 2. Find the location                                        
+**************************************************************
+
+Please input a location:Chase
+*************************Results******************************
+Latitude: 34.0223 Longitude: -118.28
+**************************************************************
+Time taken by function: 5 ms
+```
+<p align="center"><img src="img/2_1.png" alt="2_1" width="500"/></p>
+
+Example 2:
+```
+* 2. Find the location                                        
+**************************************************************
+
+Please input a location:Ralphs
+*************************Results******************************
+Latitude: 34.0318 Longitude: -118.291
+**************************************************************
+Time taken by function: 1 ms
+```
+<p align="center"><img src="img/2_2.png" alt="2_2" width="500"/></p>
+
+Example 3:
+```
+* 2. Find the location                                        
+**************************************************************
+
+Please input a location:Shell
+*************************Results******************************
+Latitude: 34.0034 Longitude: -118.283
+**************************************************************
+Time taken by function: 4 ms
+```
+<p align="center"><img src="img/2_3.png" alt="2_3" width="500"/></p>
 
 ## Item 2-2: Check Edit Distance Between Two Location Names (Phase 2)
 
@@ -1066,7 +1138,6 @@ The distance of the path is:11.9187 miles
 You could find your animation at src/lib/output0_2opt.avi.     
 Time taken by function: 11 ms
 ```
-<p align="center"><img src="img/9.png" alt="9" width="500"/></p>
 
 Brute_force:
 <p align="center"><img src="img/9_9.gif" alt="9_9" width="500"/></p>
@@ -1113,7 +1184,6 @@ The distance of the path is:9.94575 miles
 You could find your animation at src/lib/output0_2opt.avi.     
 Time taken by function: 15 ms
 ```
-<p align="center"><img src="img/10.png" alt="10" width="500"/></p>
 
 Brute_force:
 <p align="center"><img src="img/9_10.gif" alt="9_10" width="500"/></p>
@@ -1160,7 +1230,6 @@ The distance of the path is:7.84625 miles
 You could find your animation at src/lib/output0_2opt.avi.     
 Time taken by function: 22 ms
 ```
-<p align="center"><img src="img/11.png" alt="11" width="500"/></p>
 
 Brute_force:
 <p align="center"><img src="img/9_11.gif" alt="9_11" width="500"/></p>
@@ -1207,7 +1276,6 @@ The distance of the path is:9.61752 miles
 You could find your animation at src/lib/output0_2opt.avi.     
 Time taken by function: 27 ms
 ```
-<p align="center"><img src="img/12.png" alt="12" width="500"/></p>
 
 Brute_force:
 <p align="center"><img src="img/9_12.gif" alt="9_12" width="500"/></p>
