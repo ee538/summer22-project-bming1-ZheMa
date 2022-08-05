@@ -324,7 +324,8 @@ Method:
 1. Through traversal, calculate the edit distance between the input and the name of each node.
 2. Find the one with the smallest distance as the output.
 
-Example:
+```
+Example 1:
 
 Input: "Rolphs"\
 Output: "Ralphs"
@@ -341,8 +342,8 @@ Did you mean Ralphs instead of Rolphs? [y/n]y
 Latitude: 34.0318 Longitude: -118.291
 **************************************************************
 Time taken by function: 2 ms
-```
-Example:
+
+Example 2:
 * 2. Find the location                                        
 **************************************************************
 
@@ -353,7 +354,7 @@ Did you mean Chase instead of chaaase? [y/n]y
 Latitude: 34.0223 Longitude: -118.28
 **************************************************************
 Time taken by function: 4 ms
-'''
+```
 ## Item 3: Get All Categories (Phase 2)
 
 ```c++
@@ -368,6 +369,7 @@ Method:
 1. All the location categories are obtained by traversing.
 2. By combining the three functions including sort, unique and erase, the output categories will not be repeated.
 
+```
 Example:
 * 3. Find all location categories                             
 **************************************************************
@@ -434,7 +436,7 @@ yoga
 size of categories is : 58
 **************************************************************
 Time taken by function: 5 ms
-'''
+```
 
 ## Item 4: Get All Locations In A Category (Phase 2)
 
@@ -447,6 +449,7 @@ In this section if the user entries a category, the program prints all locations
 Method:
 1. Find the same category as the input by traversing, and output the coordinates of all corresponding nodes.
 
+```
 Example 1:
 
 * 4. Get all locations in a category                           
@@ -466,7 +469,7 @@ Please input a category (eg:fuel):fuel
 size of locations from categories is : 9
 **************************************************************
 Time taken by function: 5 ms
-'''
+
 Example 2:
 * 4. Get all locations in a category                           
 **************************************************************
@@ -486,7 +489,7 @@ Please input a category (eg:fuel):cafe
 size of locations from categories is : 10
 **************************************************************
 Time taken by function: 4 ms
-'''
+```
 
 ## Item 5: Get Locations Using A Regular Expression (Phase 2)
 
@@ -501,6 +504,7 @@ Your program should also verify if the input regular expression was correct.
 Method:
 1. Verify that the regular expression is correct by traversing and combining the regex_match function, and find the name of the matching node and finally output the corresponding coordinates.
 
+```
 Example 1:
 * 5. Get locations using a regular expression                 
 **************************************************************
@@ -518,7 +522,7 @@ Ramen KenJo: 34.025, -118.285
 Rite Aid 1: 34.0049, -118.282
 **************************************************************
 Time taken by function: 41 ms
-'''
+
 Example 2:
 * 5. Get locations using a regular expression                 
 **************************************************************
@@ -531,7 +535,7 @@ Roger Williams Baptist Church: 34.0325, -118.29
 Ross: 34.0044, -118.282
 **************************************************************
 Time taken by function: 40 ms
-'''
+
 Example 3:
 * 5. Get locations using a regular expression                 
 **************************************************************
@@ -541,6 +545,7 @@ regular expression of a location's name eg(R.*):rx+
 not match !
 **************************************************************
 Time taken by function: 36 ms
+```
 
 
 
