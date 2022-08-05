@@ -1431,7 +1431,7 @@ Find Nearby Results:
 **************************************************************
 Time taken by function: 10 ms
 ```
-
+```
 <p align="center"><img src="img/10_2.png" alt="10_2" width="500"/></p>
 
 Example 3:
