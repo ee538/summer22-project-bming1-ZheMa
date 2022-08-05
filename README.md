@@ -1092,7 +1092,9 @@ Time taken by function: 0 ms
 Analysis:
 ```
 **************************************************************
-According to the analysis, the time complexity of Brute-Force is O(n!), which means that the time spent will increase rapidly. If we introduce backtracking into Brute-Force, we will save a lot of time. Although 2opt loses accuracy, 2opt is the fastest algorithm whose time complexity is O(n^2); so we enter a large number, such as 16, which still takes very little time. In addition, in order to save checking time, when the program runs for more than 10 minutes, the result will be regarded as timeout.
+According to the analysis, the time complexity of Brute-Force is O(n!), which means that the time spent will increase rapidly. 
+If we introduce backtracking into Brute-Force, we will save a lot of time. Although 2opt loses accuracy, 2opt is the fastest algorithm whose time complexity is O(n^2); 
+so we enter a large number, such as 16, which still takes very little time. In addition, in order to save checking time, when the program runs for more than 10 minutes, the result will be regarded as timeout.
 **************************************************************
 ```
 Example 1:
@@ -1411,6 +1413,7 @@ Find Nearby Results:
 Time taken by function: 11 ms
 ```
 <p align="center"><img src="img/10_1.png" alt="10_1" width="500"/></p>
+
 Example 2:
 ```
 * 10. Find Nearby                                              
@@ -1430,7 +1433,6 @@ Find Nearby Results:
 6 Shell
 **************************************************************
 Time taken by function: 10 ms
-```
 ```
 <p align="center"><img src="img/10_2.png" alt="10_2" width="500"/></p>
 
