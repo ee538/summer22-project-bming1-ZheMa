@@ -1327,6 +1327,52 @@ Backtracking:
 2opt:
 <p align="center"><img src="img/9_12_2opt.gif" alt="9_12_2opt" width="500"/></p>
 
+Example 6:
+```
+* 9. Traveling salesman problem                              
+**************************************************************
+
+In this task, we will select N random points on the map and you need to find the path to travel these points and back to the start point.
+
+Please input the number of the places:13
+"8229839339","1862312580","6807552034","4094197671","2555216336","7249811174","123152291","21063610","123454869","5768963641","2613066356","123178726","4835551238",
+Calculating ...
+*************************Results******************************
+TravelingTrojan_Brute_force
+"8229839339","2555216336","1862312580","4094197671","5768963641","4835551238","123152291","123178726","123454869","7249811174","21063610","6807552034","2613066356","8229839339",
+The distance of the path is:11.4213 miles
+**************************************************************
+You could find your animation at src/lib/output0.avi.          
+Time taken by function: 13761435 ms
+
+Calculating ...
+*************************Results******************************
+TravelingTrojan_Backtracking
+"8229839339","2555216336","1862312580","4094197671","5768963641","4835551238","123152291","123178726","123454869","7249811174","21063610","6807552034","2613066356","8229839339",
+The distance of the path is:11.4213 miles
+**************************************************************
+You could find your animation at src/lib/output0_backtracking.avi.
+Time taken by function: 100807 ms
+
+Calculating ...
+*************************Results******************************
+TravelingTrojan_2opt
+"8229839339","2555216336","1862312580","4094197671","5768963641","4835551238","123152291","123178726","123454869","7249811174","21063610","6807552034","2613066356","8229839339",
+The distance of the path is:11.4213 miles
+**************************************************************
+You could find your animation at src/lib/output0_2opt.avi.     
+Time taken by function: 38 ms
+```
+
+Brute_force:
+<p align="center"><img src="img/13.gif" alt="13" width="500"/></p>
+
+Backtracking:
+<p align="center"><img src="img/13_backtracking.gif" alt="13_backtracking videos" width="500"/></p>
+
+2opt:
+<p align="center"><img src="img/13_2opt.gif" alt="13_2opt" width="500"/></p>
+
 Table :
 | Number of nodes      | Brute_force | Backtracking | 2opt     |
 | :-------------------- | :----------- |:--------------|:----------|
@@ -1336,7 +1382,7 @@ Table :
 | 10                   |    3137ms   | 574ms        |    15ms  |
 | 11                   |    35217ms  | 2236ms       |    22ms  |
 | 12                   |    430829ms | 13027ms      |    27ms  |
-| 13                   |    
+| 13                   |    13761435ms| 100807 ms   |    38ms  |
 ## Item 10: Find Nearby (Phase 3)
 
 Given an attribute name `C`, a location name `L` and a number `r` and `k`, find at most `k` locations in attribute `C` on the map near `L`(do not include `L`) with the range of `r` and return a vector of string ids. 
