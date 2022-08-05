@@ -399,20 +399,16 @@ Method:
 
 Example 1:
 ```
-Input: "Rolphs"\
-Output: "Ralphs"
-
-**************************************************************
 * 2. Find the location                                        
 **************************************************************
 
-Please input a location:Rolphs
+Please input a location:tsargget
 *************************Results******************************
 No matched locations.
-Did you mean Ralphs instead of Rolphs? [y/n]y
-Latitude: 34.0318 Longitude: -118.291
+Did you mean Target instead of tsargget? [y/n]y
+Latitude: 34.0257 Longitude: -118.284
 **************************************************************
-Time taken by function: 2 ms
+Time taken by function: 6 ms
 ```
 Example 2:
 ```
@@ -426,6 +422,18 @@ Did you mean Chase instead of chaaase? [y/n]y
 Latitude: 34.0223 Longitude: -118.28
 **************************************************************
 Time taken by function: 4 ms
+```
+Example 3:
+```
+* 2. Find the location                                        
+**************************************************************
+
+Please input a location:shhhhhhhheed 
+*************************Results******************************
+No matched locations.
+Did you mean Holy Green instead of shhhhhhhheed? [y/n]n
+**************************************************************
+Time taken by function: 1 ms
 ```
 ## Item 3: Get All Categories (Phase 2)
 
@@ -562,7 +570,18 @@ size of locations from categories is : 10
 **************************************************************
 Time taken by function: 4 ms
 ```
+Example 3:
+```
+* 4. Get all locations in a category                           
+**************************************************************
 
+Please input a category (eg:fuel):police
+*************************Results******************************
+(34.0123, -118.256)
+size of locations from categories is : 1
+**************************************************************
+Time taken by function: 4 ms
+```
 ## Item 5: Get Locations Using A Regular Expression (Phase 2)
 
 ```c++
@@ -749,11 +768,11 @@ Time taken by function: 16855 ms
 <p align="center"><img src="img/6_3.png" alt="6_3" width="500"/></p>
 
 Table:
-| Point A to Point B      | Dijkstra | Bellman Ford|
-| -------------------- | ----------- |-------|
-| Ralphs to Target     |  58ms       | 14488ms    |
-| Chase to Ralphs      |  152ms      | 17901ms    |
-| Holbox to Chase      |  32ms       | 16855ms    |
+| Point A to Point B      | Dijkstra | Bellman Ford|Distance|
+| :-------------------- | :----------- |:-------|:--------|
+| Ralphs to Target     |  58ms       | 14488ms    |0.927969 miles|
+| Chase to Ralphs      |  152ms      | 17901ms    |1.25601 miles|
+| Holbox to Chase      |  32ms       | 16855ms    |0.539417 miles|
 
 ## Item 7: Cycle Detection (Phase 2)
 
@@ -850,6 +869,21 @@ there exists a cycle in the subgraph
 Time taken by function: 0 ms
 ```
 <p align="center"><img src="img/7image5.png" alt="7image5" width="500"/></p>
+
+Example 6:
+```
+* 7. Cycle Detection                                          
+**************************************************************
+
+Please input the left bound longitude(between -118.320 and -118.250):-118.300
+Please input the right bound longitude(between -118.320 and -118.250):-118.299
+Please input the upper bound latitude(between 34.000 and 34.040):34.021
+Please input the lower bound latitude(between 34.000 and 34.040):34.020
+*************************Results******************************
+there exist no cycle in the subgraph 
+**************************************************************
+Time taken by function: 0 ms
+```
 
 **Your report should include at least five examples.**
 
@@ -1055,6 +1089,10 @@ Time taken by function: 0 ms
 
 <p align="center"><img src="img/output.gif" alt="TSP videos" width="500"/></p>
 
+Analysis:
+```
+According to the analysis, the time complexity of Brute-Force is O(n!), which means that the time spent will increase rapidly. If we introduce backtracking into Brute-Force, we will save a lot of time. Although 2opt loses accuracy, 2opt is the fastest algorithm whose time complexity is O(n^2); so we enter a large number, such as 16, which still takes very little time. In addition, in order to save checking time, when the program runs for more than 10 minutes, the result will be regarded as timeout.
+```
 Example 1:
 ```
 * 9. Traveling salesman problem                              
@@ -1091,8 +1129,6 @@ The distance of the path is:6.97948 miles
 You could find your animation at src/lib/output0_2opt.avi.     
 Time taken by function: 8 ms
 ```
-<p align="center"><img src="img/9_8.png" alt="TSP" width="500"/></p>
-
 Brute_force:
 <p align="center"><img src="img/9_8.gif" alt="9_8" width="500"/></p>
 
@@ -1104,6 +1140,7 @@ Backtracking:
 
 Example 2:
 ```
+
 * 9. Traveling salesman problem                              
 **************************************************************
 
@@ -1289,11 +1326,13 @@ Backtracking:
 Table :
 | Number of nodes      | Brute_force | Backtracking | 2opt     |
 | :-------------------- | :----------- |:--------------|:----------|
+| 7                    |    5ms      | 3ms          |    5ms   |
 | 8                    |    40ms     | 20ms         |    8ms   |
 | 9                    |    345ms    | 97ms         |    11ms  |
 | 10                   |    3137ms   | 574ms        |    15ms  |
 | 11                   |    35217ms  | 2236ms       |    22ms  |
 | 12                   |    430829ms | 13027ms      |    27ms  |
+| 13                   |    
 ## Item 10: Find Nearby (Phase 3)
 
 Given an attribute name `C`, a location name `L` and a number `r` and `k`, find at most `k` locations in attribute `C` on the map near `L`(do not include `L`) with the range of `r` and return a vector of string ids. 
@@ -1345,6 +1384,72 @@ Time taken by function: 5 ms
 
 <p align="center"><img src="img/Nearby.png" alt="Nearby" width="500"/></p>
 
+Example 1:
+```
+* 10. Find Nearby                                              
+**************************************************************
+
+Please input the attribute:cafe
+Please input the locations:Ralphs
+Please input radius r:10
+Please input number k:10
+*************************Results******************************
+Find Nearby Results:
+1 Starbucks 2
+2 Dulce
+3 Starbucks 3
+4 Trojan Grounds (Starbucks)
+5 Nekter Juice Bar
+6 Ground Zero
+7 Starbucks 1
+8 The Coffee Bean & Tea Leaf
+9 Starbucks
+10 Cognoscenti Coffee Roastery
+**************************************************************
+Time taken by function: 11 ms
+```
+<p align="center"><img src="img/10_1.png" alt="10_1" width="500"/></p>
+Example 2:
+```shell
+* 10. Find Nearby                                              
+**************************************************************
+
+Please input the attribute:fuel 
+Please input the locations:Chase
+Please input radius r:10
+Please input number k:6
+*************************Results******************************
+Find Nearby Results:
+1 Chevron
+2 Arco
+3 Chevron 2
+4 76
+5 Chevron 1
+6 Shell
+**************************************************************
+Time taken by function: 10 ms
+```
+```
+<p align="center"><img src="img/10_2.png" alt="10_2" width="500"/></p>
+
+Example 3:
+```
+* 10. Find Nearby                                              
+**************************************************************
+
+Please input the attribute:car
+Please input the locations:Chase
+Please input radius r:8
+Please input number k:5
+*************************Results******************************
+Find Nearby Results:
+1 Felix Chevrolet
+2 Honda
+**************************************************************
+Time taken by function: 8 ms
+```
+```
+<p align="center"><img src="img/10_3.png" alt="10_3" width="500"/></p>
 
 ## Reporting Runtime:
 For each menu item, your program should show the time it took to finish each task.
