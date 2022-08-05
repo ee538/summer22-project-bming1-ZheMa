@@ -699,8 +699,86 @@ Method:
 2. We create a helper function to detect whether there is a circle based on DFS algorithm. We mark the visited nodes and when the child node is not parent node and it is visited, there is a circle.
 3. We traverse all nodes to run helper function to detect circle.
    
-Examples:
-TBW
+Example 1:
+```
+* 7. Cycle Detection                                          
+**************************************************************
+
+Please input the left bound longitude(between -118.320 and -118.250):-118.320
+Please input the right bound longitude(between -118.320 and -118.250):-118.250
+Please input the upper bound latitude(between 34.000 and 34.040):34.040
+Please input the lower bound latitude(between 34.000 and 34.040):34.000
+*************************Results******************************
+there exists a cycle in the subgraph 
+**************************************************************
+Time taken by function: 0 ms
+```
+<p align="center"><img src="img/7image1.png" alt="7image1" width="500"/></p>
+
+Example 2:
+```
+* 7. Cycle Detection                                          
+**************************************************************
+
+Please input the left bound longitude(between -118.320 and -118.250):-118.300
+Please input the right bound longitude(between -118.320 and -118.250):-118.270
+Please input the upper bound latitude(between 34.000 and 34.040):34.030
+Please input the lower bound latitude(between 34.000 and 34.040):34.000
+*************************Results******************************
+there exists a cycle in the subgraph 
+**************************************************************
+Time taken by function: 0 ms
+```
+<p align="center"><img src="img/7image2.png" alt="7image2" width="500"/></p>
+
+Example 3:
+```
+* 7. Cycle Detection                                          
+**************************************************************
+
+Please input the left bound longitude(between -118.320 and -118.250):-118.289
+Please input the right bound longitude(between -118.320 and -118.250):-118.250
+Please input the upper bound latitude(between 34.000 and 34.040):34.036
+Please input the lower bound latitude(between 34.000 and 34.040):34.010
+*************************Results******************************
+there exists a cycle in the subgraph 
+**************************************************************
+Time taken by function: 0 ms
+```
+<p align="center"><img src="img/7image3.png" alt="7image3" width="500"/></p>
+
+Example 4:
+```
+* 7. Cycle Detection                                          
+**************************************************************
+
+Please input the left bound longitude(between -118.320 and -118.250):-118.315
+Please input the right bound longitude(between -118.320 and -118.250):-118.277
+Please input the upper bound latitude(between 34.000 and 34.040):34.028
+Please input the lower bound latitude(between 34.000 and 34.040):34.009
+*************************Results******************************
+there exists a cycle in the subgraph 
+**************************************************************
+Time taken by function: 0 ms
+```
+<p align="center"><img src="img/7image4.png" alt="7image4" width="500"/></p>
+
+Example 5:
+```
+* 7. Cycle Detection                                          
+**************************************************************
+
+Please input the left bound longitude(between -118.320 and -118.250):-118.300
+Please input the right bound longitude(between -118.320 and -118.250):-118.273
+Please input the upper bound latitude(between 34.000 and 34.040):34.038
+Please input the lower bound latitude(between 34.000 and 34.040):34.029
+*************************Results******************************
+there exists a cycle in the subgraph 
+**************************************************************
+Time taken by function: 0 ms
+```
+<p align="center"><img src="img/7image4.png" alt="7image4" width="500"/></p>
+
 **Your report should include at least five examples.**
 
 ## Item 8: Topological Sort (Phase 2)
@@ -765,8 +843,65 @@ Time taken by function: 2 ms
 <p align="center"><img src="img/TopologicalSort.png" alt="TSP" width="500"/></p>
 
 In the user interface, we read the locations and dependencies from `topologicalsort_dependencies.csv` and `topologicalsort_locations.csv` to modify your input there.
-Examples:
-TBW
+Example1:
+```
+* 8. Topological Sort                                         
+**************************************************************
+
+Please input the locations filename:/Users/mingbei/Desktop/summer22-project-bming1/input/topologicalsort_locations.csv
+Please input the dependencies filename:/Users/mingbei/Desktop/summer22-project-bming1/input/topologicalsort_dependencies.csv
+*************************Results******************************
+Topological Sorting Results:
+Ralphs
+Chick-fil-A
+KFC
+**************************************************************
+Time taken by function: 1 ms
+```
+<p align="center"><img src="img/8image1.png" alt="8image1" width="500"/></p>
+
+Example 2:
+```
+* 8. Topological Sort                                         
+**************************************************************
+
+Please input the locations filename:/Users/mingbei/Desktop/summer22-project-bming1/input/test1_l.csv
+Please input the dependencies filename:/Users/mingbei/Desktop/summer22-project-bming1/input/test1_d.csv
+*************************Results******************************
+Topological Sorting Results:
+Kaitlyn
+Adams Normandie Historic District
+Ralphs
+Chick-fil-A
+KFC
+**************************************************************
+Time taken by function: 0 ms
+```
+<p align="center"><img src="img/8image2.png" alt="8image2" width="500"/></p>
+
+Example 3:
+```
+* 8. Topological Sort                                         
+**************************************************************
+
+Please input the locations filename:/Users/mingbei/Desktop/summer22-project-bming1/input/test2_l.csv            
+Please input the dependencies filename:/Users/mingbei/Desktop/summer22-project-bming1/input/test2_d.csv
+*************************Results******************************
+Topological Sorting Results:
+Venice & Figueroa
+Washington & Westmoreland
+Cognoscenti Coffee Roastery
+Ralphs
+Venice & Flower
+Chick-fil-A
+KFC
+Kaitlyn
+Grand & 30th
+Adams Normandie Historic District
+**************************************************************
+Time taken by function: 0 ms
+```
+<p align="center"><img src="img/8_3.png" alt="8_3" width="500"/></p>
 
 ## Item 9: The Traveling Trojan Problem (AKA Traveling Salesman!) (Phase 3)
 
