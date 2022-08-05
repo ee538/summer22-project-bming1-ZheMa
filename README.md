@@ -1094,7 +1094,7 @@ Analysis:
 **************************************************************
 According to the analysis, the time complexity of Brute-Force is O(n!), which means that the time spent will increase rapidly. 
 If we introduce backtracking into Brute-Force, we will save a lot of time. Although 2opt loses accuracy, 2opt is the fastest algorithm whose time complexity is O(n^2); 
-so we enter a large number, such as 16, which still takes very little time. In addition, in order to save checking time, when the program runs for more than 10 minutes, the result will be regarded as timeout.
+so we enter a large number, such as 16, which still takes very little time. In addition, in order to save checking time, when the program runs for more than 4 hours, the result will be regarded as timeout.
 **************************************************************
 ```
 Example 1:
@@ -1376,6 +1376,7 @@ Backtracking:
 Table :
 | Number of nodes      | Brute_force | Backtracking | 2opt     |
 | :-------------------- | :----------- |:--------------|:----------|
+| 6                    |    1ms      | 1ms          |    3ms   |
 | 7                    |    5ms      | 3ms          |    5ms   |
 | 8                    |    40ms     | 20ms         |    8ms   |
 | 9                    |    345ms    | 97ms         |    11ms  |
