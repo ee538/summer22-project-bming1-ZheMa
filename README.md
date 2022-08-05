@@ -901,7 +901,7 @@ Adams Normandie Historic District
 **************************************************************
 Time taken by function: 0 ms
 ```
-<p align="center"><img src="img/8_4.png" alt="8_4" width="500"/></p>
+<p align="center"><img src="img/8_3.png" alt="8_3" width="500"/></p>
 
 ## Item 9: The Traveling Trojan Problem (AKA Traveling Salesman!) (Phase 3)
 
@@ -1021,7 +1021,14 @@ Time taken by function: 8 ms
 ```
 <p align="center"><img src="img/9_8.png" alt="TSP" width="500"/></p>
 
-<p align="center"><img src="img/9_8.gif" alt="TSP videos" width="500"/></p>
+Brute_force:
+<p align="center"><img src="img/9_8.gif" alt="9_8" width="500"/></p>
+
+Backtracking:
+<p align="center"><img src="img/9_8_backtracking.gif" alt="9_8_backtracking videos" width="500"/></p>
+
+2opt:
+<p align="center"><img src="img/9_8_2opt.gif" alt="9_8_2opt" width="500"/></p>
 
 ## Item 10: Find Nearby (Phase 3)
 
