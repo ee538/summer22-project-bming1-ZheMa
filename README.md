@@ -1288,12 +1288,12 @@ Backtracking:
 
 Table :
 | Number of nodes      | Brute_force | Backtracking | 2opt     |
-| -------------------- | ----------- |--------------|----------｜
-| 8                    |    40ms     | 20ms         |    8ms   ｜
-| 9                    |    345ms    | 97ms         |    11ms  ｜
-| 10                   |    3137ms   | 574ms        |    15ms  ｜
-| 11                   |    35217ms  | 2236ms       |    22ms  ｜
-| 12                   |    430829ms | 13027ms      |    27ms  ｜
+| -------------------- | ----------- |--------------|----------|
+| 8                    |    40ms     | 20ms         |    8ms   |
+| 9                    |    345ms    | 97ms         |    11ms  |
+| 10                   |    3137ms   | 574ms        |    15ms  |
+| 11                   |    35217ms  | 2236ms       |    22ms  |
+| 12                   |    430829ms | 13027ms      |    27ms  |
 ## Item 10: Find Nearby (Phase 3)
 
 Given an attribute name `C`, a location name `L` and a number `r` and `k`, find at most `k` locations in attribute `C` on the map near `L`(do not include `L`) with the range of `r` and return a vector of string ids. 
