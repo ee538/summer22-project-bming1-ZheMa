@@ -1066,7 +1066,7 @@ The distance of the path is:11.9187 miles
 You could find your animation at src/lib/output0_2opt.avi.     
 Time taken by function: 11 ms
 ```
-<p align="center"><img src="img/9_9.png" alt="9_9" width="500"/></p>
+<p align="center"><img src="img/9.png" alt="9_9" width="500"/></p>
 
 Brute_force:
 <p align="center"><img src="img/9_9.gif" alt="9_9" width="500"/></p>
@@ -1113,7 +1113,7 @@ The distance of the path is:9.94575 miles
 You could find your animation at src/lib/output0_2opt.avi.     
 Time taken by function: 15 ms
 ```
-<p align="center"><img src="img/9_10.png" alt="9_10" width="500"/></p>
+<p align="center"><img src="img/10.png" alt="9_10" width="500"/></p>
 
 Brute_force:
 <p align="center"><img src="img/9_10.gif" alt="9_10" width="500"/></p>
@@ -1160,7 +1160,7 @@ The distance of the path is:7.84625 miles
 You could find your animation at src/lib/output0_2opt.avi.     
 Time taken by function: 22 ms
 ```
-<p align="center"><img src="img/9_11.png" alt="9_11" width="500"/></p>
+<p align="center"><img src="img/11.png" alt="9_11" width="500"/></p>
 
 Brute_force:
 <p align="center"><img src="img/9_11.gif" alt="9_11" width="500"/></p>
@@ -1207,7 +1207,7 @@ The distance of the path is:9.61752 miles
 You could find your animation at src/lib/output0_2opt.avi.     
 Time taken by function: 27 ms
 ```
-<p align="center"><img src="img/9_12.png" alt="9_12" width="500"/></p>
+<p align="center"><img src="img/12.png" alt="9_12" width="500"/></p>
 
 Brute_force:
 <p align="center"><img src="img/9_12.gif" alt="9_12" width="500"/></p>
@@ -1219,13 +1219,13 @@ Backtracking:
 <p align="center"><img src="img/9_12_2opt.gif" alt="9_12_2opt" width="500"/></p>
 
 Table :
-| Number of nodes      | Time with Brute_force | Time with Backtracking |Time with 2opt|
-| -------------------- | ----------- |--------|--------｜
-| 8            |    40      | 20   |    8 ｜
-| 9            |    345      | 97   |    11 ｜
-| 10            |    3137      | 574   |    15 ｜
-| 11            |    35217     | 2236   |    22 ｜
-| 12            |    430829      | 13027  |    27 ｜
+| Number of nodes      | Brute_force | Backtracking | 2opt|
+| -------------------- | ----------- |--------------|--------｜
+| 8                    |    40ms     | 20ms         |    8ms   ｜
+| 9                    |    345ms    | 97ms         |    11ms  ｜
+| 10                   |    3137ms   | 574ms        |    15ms  ｜
+| 11                   |    35217ms  | 2236ms       |    22ms  ｜
+| 12                   |    430829ms | 13027ms      |    27ms  ｜
 ## Item 10: Find Nearby (Phase 3)
 
 Given an attribute name `C`, a location name `L` and a number `r` and `k`, find at most `k` locations in attribute `C` on the map near `L`(do not include `L`) with the range of `r` and return a vector of string ids. 
