@@ -1066,7 +1066,7 @@ The distance of the path is:11.9187 miles
 You could find your animation at src/lib/output0_2opt.avi.     
 Time taken by function: 11 ms
 ```
-<p align="center"><img src="img/9.png" alt="9_9" width="500"/></p>
+<p align="center"><img src="img/9.png" alt="9" width="500"/></p>
 
 Brute_force:
 <p align="center"><img src="img/9_9.gif" alt="9_9" width="500"/></p>
@@ -1113,7 +1113,7 @@ The distance of the path is:9.94575 miles
 You could find your animation at src/lib/output0_2opt.avi.     
 Time taken by function: 15 ms
 ```
-<p align="center"><img src="img/10.png" alt="9_10" width="500"/></p>
+<p align="center"><img src="img/10.png" alt="10" width="500"/></p>
 
 Brute_force:
 <p align="center"><img src="img/9_10.gif" alt="9_10" width="500"/></p>
@@ -1160,7 +1160,7 @@ The distance of the path is:7.84625 miles
 You could find your animation at src/lib/output0_2opt.avi.     
 Time taken by function: 22 ms
 ```
-<p align="center"><img src="img/11.png" alt="9_11" width="500"/></p>
+<p align="center"><img src="img/11.png" alt="11" width="500"/></p>
 
 Brute_force:
 <p align="center"><img src="img/9_11.gif" alt="9_11" width="500"/></p>
@@ -1207,7 +1207,7 @@ The distance of the path is:9.61752 miles
 You could find your animation at src/lib/output0_2opt.avi.     
 Time taken by function: 27 ms
 ```
-<p align="center"><img src="img/12.png" alt="9_12" width="500"/></p>
+<p align="center"><img src="img/12.png" alt="12" width="500"/></p>
 
 Brute_force:
 <p align="center"><img src="img/9_12.gif" alt="9_12" width="500"/></p>
@@ -1219,8 +1219,8 @@ Backtracking:
 <p align="center"><img src="img/9_12_2opt.gif" alt="9_12_2opt" width="500"/></p>
 
 Table :
-| Number of nodes      | Brute_force | Backtracking | 2opt|
-| -------------------- | ----------- |--------------|--------｜
+| Number of nodes      | Brute_force | Backtracking | 2opt     |
+| -------------------- | ----------- |--------------|----------｜
 | 8                    |    40ms     | 20ms         |    8ms   ｜
 | 9                    |    345ms    | 97ms         |    11ms  ｜
 | 10                   |    3137ms   | 574ms        |    15ms  ｜
