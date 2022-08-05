@@ -629,6 +629,7 @@ The distance of the path is:0.927969 miles
 Time taken by function: 14488 ms
 ```
 <p align="center"><img src="img/6_1.png" alt="6_1" width="500"/></p>
+
 Example 2:
 ```
 * 6. CalculateShortestPath                                    
@@ -650,8 +651,10 @@ The distance of the path is:1.25601 miles
 **************************************************************
 Time taken by function: 17901 ms
 ```
+<p align="center"><img src="img/6_2.png" alt="6_2" width="500"/></p>
+
 Example 3:
-```
+```shell
 * 6. CalculateShortestPath                                    
 **************************************************************
 
@@ -671,11 +674,15 @@ The distance of the path is:0.539417 miles
 **************************************************************
 Time taken by function: 16855 ms
 ```
+<p align="center"><img src="img/6_3.png" alt="6_3" width="500"/></p>
+
+Table:
 | Point A to Point B      | Dijkstra | Bellman Ford|
 | -------------------- | ----------- |-------|
-| Ralphs to Target     |  58ms       | 14488ms     |
+| Ralphs to Target     |  58ms       | 14488ms    |
 | Chase to Ralphs      |  152ms      | 17901ms    |
 | Holbox to Chase      |  32ms       | 16855ms    |
+
 ## Item 7: Cycle Detection (Phase 2)
 
 ```c++
