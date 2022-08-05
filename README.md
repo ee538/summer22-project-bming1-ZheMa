@@ -1030,6 +1030,202 @@ Backtracking:
 2opt:
 <p align="center"><img src="img/9_8_2opt.gif" alt="9_8_2opt" width="500"/></p>
 
+Example 2:
+```
+* 9. Traveling salesman problem                              
+**************************************************************
+
+In this task, we will select N random points on the map and you need to find the path to travel these points and back to the start point.
+
+Please input the number of the places:9
+"9559677951","6696867982","7465955081","6987230638","4020099333","6805686618","122670346","6787728649","6816781772",
+Calculating ...
+*************************Results******************************
+TravelingTrojan_Brute_force
+"9559677951","4020099333","122670346","6787728649","7465955081","6987230638","6805686618","6696867982","6816781772","9559677951",
+The distance of the path is:11.9187 miles
+**************************************************************
+You could find your animation at src/lib/output0.avi.          
+Time taken by function: 345 ms
+
+Calculating ...
+*************************Results******************************
+TravelingTrojan_Backtracking
+"9559677951","4020099333","122670346","6787728649","7465955081","6987230638","6805686618","6696867982","6816781772","9559677951",
+The distance of the path is:11.9187 miles
+**************************************************************
+You could find your animation at src/lib/output0_backtracking.avi.
+Time taken by function: 97 ms
+
+Calculating ...
+*************************Results******************************
+TravelingTrojan_2opt
+"9559677951","4020099333","122670346","6787728649","7465955081","6987230638","6805686618","6696867982","6816781772","9559677951",
+The distance of the path is:11.9187 miles
+**************************************************************
+You could find your animation at src/lib/output0_2opt.avi.     
+Time taken by function: 11 ms
+```
+<p align="center"><img src="img/9_9.png" alt="9_9" width="500"/></p>
+
+Brute_force:
+<p align="center"><img src="img/9_9.gif" alt="9_9" width="500"/></p>
+
+Backtracking:
+<p align="center"><img src="img/9_9_backtracking.gif" alt="9_9_backtracking videos" width="500"/></p>
+
+2opt:
+<p align="center"><img src="img/9_9_2opt.gif" alt="9_9_2opt" width="500"/></p>
+
+Example 3:
+```
+* 9. Traveling salesman problem                              
+**************************************************************
+
+In this task, we will select N random points on the map and you need to find the path to travel these points and back to the start point.
+
+Please input the number of the places:10
+"123182704","8862673115","8566227339","6819288802","9561765216","4583257829","6808276781","7863630713","4640058005","8474272878",
+Calculating ...
+*************************Results******************************
+TravelingTrojan_Brute_force
+"123182704","6808276781","4640058005","6819288802","8566227339","8862673115","9561765216","8474272878","7863630713","4583257829","123182704",
+The distance of the path is:9.82917 miles
+**************************************************************
+You could find your animation at src/lib/output0.avi.          
+Time taken by function: 3137 ms
+
+Calculating ...
+*************************Results******************************
+TravelingTrojan_Backtracking
+"123182704","6808276781","4640058005","6819288802","8566227339","8862673115","9561765216","8474272878","7863630713","4583257829","123182704",
+The distance of the path is:9.82917 miles
+**************************************************************
+You could find your animation at src/lib/output0_backtracking.avi.
+Time taken by function: 574 ms
+
+Calculating ...
+*************************Results******************************
+TravelingTrojan_2opt
+"123182704","6819288802","6808276781","4640058005","8566227339","8862673115","9561765216","8474272878","7863630713","4583257829","123182704",
+The distance of the path is:9.94575 miles
+**************************************************************
+You could find your animation at src/lib/output0_2opt.avi.     
+Time taken by function: 15 ms
+```
+<p align="center"><img src="img/9_10.png" alt="9_10" width="500"/></p>
+
+Brute_force:
+<p align="center"><img src="img/9_10.gif" alt="9_10" width="500"/></p>
+
+Backtracking:
+<p align="center"><img src="img/9_10_backtracking.gif" alt="9_10_backtracking videos" width="500"/></p>
+
+2opt:
+<p align="center"><img src="img/9_10_2opt.gif" alt="9_10_2opt" width="500"/></p>
+
+Example 4:
+```
+* 9. Traveling salesman problem                              
+**************************************************************
+
+In this task, we will select N random points on the map and you need to find the path to travel these points and back to the start point.
+
+Please input the number of the places:11
+"6816800249","4835549609","8344672873","3396365189","8832489164","7279484757","1855166283","3659478909","6693451972","3398621876","1732340077",
+Calculating ...
+*************************Results******************************
+TravelingTrojan_Brute_force
+"6816800249","1855166283","6693451972","8832489164","8344672873","3398621876","3659478909","7279484757","4835549609","1732340077","3396365189","6816800249",
+The distance of the path is:7.84625 miles
+**************************************************************
+You could find your animation at src/lib/output0.avi.          
+Time taken by function: 35217 ms
+
+Calculating ...
+*************************Results******************************
+TravelingTrojan_Backtracking
+"6816800249","1855166283","6693451972","8832489164","8344672873","3398621876","3659478909","7279484757","4835549609","1732340077","3396365189","6816800249",
+The distance of the path is:7.84625 miles
+**************************************************************
+You could find your animation at src/lib/output0_backtracking.avi.
+Time taken by function: 2236 ms
+
+Calculating ...
+*************************Results******************************
+TravelingTrojan_2opt
+"6816800249","1855166283","6693451972","8832489164","8344672873","3398621876","3659478909","7279484757","4835549609","1732340077","3396365189","6816800249",
+The distance of the path is:7.84625 miles
+**************************************************************
+You could find your animation at src/lib/output0_2opt.avi.     
+Time taken by function: 22 ms
+```
+<p align="center"><img src="img/9_11.png" alt="9_11" width="500"/></p>
+
+Brute_force:
+<p align="center"><img src="img/9_11.gif" alt="9_11" width="500"/></p>
+
+Backtracking:
+<p align="center"><img src="img/9_11_backtracking.gif" alt="9_11_backtracking videos" width="500"/></p>
+
+2opt:
+<p align="center"><img src="img/9_11_2opt.gif" alt="9_11_2opt" width="500"/></p>
+
+Example 5:
+```
+* 9. Traveling salesman problem                              
+**************************************************************
+
+In this task, we will select N random points on the map and you need to find the path to travel these points and back to the start point.
+
+Please input the number of the places:12
+"6807245744","63051646","6788017726","3285243200","6790646126","6278441412","6816193701","4015486527","6814770363","1837207823","932378105","4872897511",
+Calculating ...
+*************************Results******************************
+TravelingTrojan_Brute_force
+"6807245744","4872897511","6814770363","6816193701","6788017726","4015486527","1837207823","932378105","6790646126","3285243200","6278441412","63051646","6807245744",
+The distance of the path is:9.61752 miles
+**************************************************************
+You could find your animation at src/lib/output0.avi.          
+Time taken by function: 430829 ms
+
+Calculating ...
+*************************Results******************************
+TravelingTrojan_Backtracking
+"6807245744","4872897511","6814770363","6816193701","6788017726","4015486527","1837207823","932378105","6790646126","3285243200","6278441412","63051646","6807245744",
+The distance of the path is:9.61752 miles
+**************************************************************
+You could find your animation at src/lib/output0_backtracking.avi.
+Time taken by function: 13027 ms
+
+Calculating ...
+*************************Results******************************
+TravelingTrojan_2opt
+"6807245744","4872897511","6814770363","6816193701","6788017726","4015486527","1837207823","932378105","6790646126","3285243200","6278441412","63051646","6807245744",
+The distance of the path is:9.61752 miles
+**************************************************************
+You could find your animation at src/lib/output0_2opt.avi.     
+Time taken by function: 27 ms
+```
+<p align="center"><img src="img/9_12.png" alt="9_12" width="500"/></p>
+
+Brute_force:
+<p align="center"><img src="img/9_12.gif" alt="9_12" width="500"/></p>
+
+Backtracking:
+<p align="center"><img src="img/9_12_backtracking.gif" alt="9_12_backtracking videos" width="500"/></p>
+
+2opt:
+<p align="center"><img src="img/9_12_2opt.gif" alt="9_12_2opt" width="500"/></p>
+
+Table :
+| Number of nodes      | Time with Brute_force | Time with Backtracking |Time with 2opt|
+| -------------------- | ----------- |--------|--------｜
+| 8            |    40      | 20   |    8 ｜
+| 9            |    345      | 97   |    11 ｜
+| 10            |    3137      | 574   |    15 ｜
+| 11            |    35217     | 2236   |    22 ｜
+| 12            |    430829      | 13027  |    27 ｜
 ## Item 10: Find Nearby (Phase 3)
 
 Given an attribute name `C`, a location name `L` and a number `r` and `k`, find at most `k` locations in attribute `C` on the map near `L`(do not include `L`) with the range of `r` and return a vector of string ids. 
