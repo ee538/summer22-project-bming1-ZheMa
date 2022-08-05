@@ -246,7 +246,7 @@ Time taken by function: 2 ms
 ```
 
 - What is the runtime of your algorithm? 
-- A: We need to traverse all nodes in the data, so the time complexity is O(n).
+- Ans: We need to traverse all nodes in the data, so the time complexity is O(n).
 - (Optional) Can you do it faster than `O(n)`?
 
 ## Item 2-1: Find the place's coordinates in the Map (Phase 1)
@@ -300,7 +300,9 @@ For example, if I type *Rolphs*, I should get a warning like "Did you mean *Ralp
 Write a dynamic programming solution to calculate edit distance. 
 
 Method:
-1. TBW
+1. For two different strings, we can use the previous edit state as a base and then move to the next edit state by deleting, inserting or swapping until the two strings are exactly the same.
+2. In each editing operation, we only select the process with the least number of steps.
+3. We use a two-dimensional matrix to record each edit state of the two strings, and finally we get the minimum edit distance through iteration.
 
 ```c++
 std::string FindClosestName(std::string name);
@@ -319,7 +321,8 @@ Output: 1
 In the user interface of your program, you should show the names that have the minimum edit distance to the name that the user entered.
 
 Method:
-1. TBW
+1. Through traversal, calculate the edit distance between the input and the name of each node.
+2. Find the one with the smallest distance as the output.
 
 Example:
 
@@ -339,7 +342,18 @@ Latitude: 34.0318 Longitude: -118.291
 **************************************************************
 Time taken by function: 2 ms
 ```
+Example:
+* 2. Find the location                                        
+**************************************************************
 
+Please input a location:chaaase
+*************************Results******************************
+No matched locations.
+Did you mean Chase instead of chaaase? [y/n]y
+Latitude: 34.0223 Longitude: -118.28
+**************************************************************
+Time taken by function: 4 ms
+'''
 ## Item 3: Get All Categories (Phase 2)
 
 ```c++
@@ -351,7 +365,76 @@ Some of the locations have category types (`attributes` field in `data.csv` file
 In this section, your program should print all available categories among all existing categories in the map. There should be no duplicates in the output.
 
 Method:
-1. TBW
+1. All the location categories are obtained by traversing.
+2. By combining the three functions including sort, unique and erase, the output categories will not be repeated.
+
+Example:
+* 3. Find all location categories                             
+**************************************************************
+
+*************************Results******************************
+artwork
+attraction
+bakery
+bank
+bar
+beauty
+beverages
+bicycle
+bicycle_rental
+bus_station
+cafe
+car
+car_repair
+car_wash
+charging_station
+childcare
+clinic
+clothes
+confectionery
+convenience
+copyshop
+dentist
+department_store
+driving_school
+fabric
+fast_food
+food_court
+fountain
+fuel
+gallery
+hairdresser
+hospital
+hotel
+library
+marketplace
+mobile_phone
+museum
+music
+optician
+parcel_locker
+parking
+parking_entrance
+pharmacy
+place_of_worship
+police
+post_box
+post_office
+restaurant
+school
+shoe_repair
+shoes
+skate
+social_facility
+supermarket
+theatre
+tobacco
+yes
+yoga
+size of categories is : 58
+**************************************************************
+Time taken by function: 5 ms
+'''
 
 ## Item 4: Get All Locations In A Category (Phase 2)
 
@@ -362,7 +445,48 @@ std::pair<double, double> GetAllLocationsFromCategory(std::string category);
 In this section if the user entries a category, the program prints all locations that match that category. For example, if there is a category called "Grocery", your program should print all locations that match the "Grocery" category. 
 
 Method:
-1. TBW
+1. Find the same category as the input by traversing, and output the coordinates of all corresponding nodes.
+
+Example 1:
+
+* 4. Get all locations in a category                           
+**************************************************************
+
+Please input a category (eg:fuel):fuel
+*************************Results******************************
+(34.0324, -118.3)
+(34.0358, -118.291)
+(34.0246, -118.25)
+(34.0336, -118.262)
+(34.004, -118.283)
+(34.0034, -118.283)
+(34.0354, -118.284)
+(34.018, -118.309)
+(34.0107, -118.282)
+size of locations from categories is : 9
+**************************************************************
+Time taken by function: 5 ms
+'''
+Example 2:
+* 4. Get all locations in a category                           
+**************************************************************
+
+Please input a category (eg:fuel):cafe
+*************************Results******************************
+(34.0354, -118.253)
+(34.0245, -118.284)
+(34.0172, -118.282)
+(34.0247, -118.288)
+(34.0186, -118.282)
+(34.0391, -118.261)
+(34.019, -118.288)
+(34.0254, -118.285)
+(34.0213, -118.282)
+(34.0195, -118.282)
+size of locations from categories is : 10
+**************************************************************
+Time taken by function: 4 ms
+'''
 
 ## Item 5: Get Locations Using A Regular Expression (Phase 2)
 
@@ -375,7 +499,49 @@ In this section if the user enters a [regular expression](https://en.wikipedia.o
 Your program should also verify if the input regular expression was correct.
 
 Method:
-1. TBW
+1. Verify that the regular expression is correct by traversing and combining the regex_match function, and find the name of the matching node and finally output the corresponding coordinates.
+
+Example 1:
+* 5. Get locations using a regular expression                 
+**************************************************************
+
+regular expression of a location's name eg(R.*):R.*
+*************************Results******************************
+Rock & Reillys: 34.0243, -118.284
+Rossoblu: 34.035, -118.254
+Rite Aid: 34.0286, -118.261
+Ralphs: 34.0318, -118.291
+Roger Williams Baptist Church: 34.0325, -118.29
+Ross: 34.0044, -118.282
+Redeemer Missionary Baptist Church: 34.033, -118.298
+Ramen KenJo: 34.025, -118.285
+Rite Aid 1: 34.0049, -118.282
+**************************************************************
+Time taken by function: 41 ms
+'''
+Example 2:
+* 5. Get locations using a regular expression                 
+**************************************************************
+
+regular expression of a location's name eg(R.*):Ro.+
+*************************Results******************************
+Rock & Reillys: 34.0243, -118.284
+Rossoblu: 34.035, -118.254
+Roger Williams Baptist Church: 34.0325, -118.29
+Ross: 34.0044, -118.282
+**************************************************************
+Time taken by function: 40 ms
+'''
+Example 3:
+* 5. Get locations using a regular expression                 
+**************************************************************
+
+regular expression of a location's name eg(R.*):rx+
+*************************Results******************************
+not match !
+**************************************************************
+Time taken by function: 36 ms
+
 
 
 ## Item 6: CalculateShortestPath between two places (Phase 2)
@@ -398,13 +564,17 @@ Method of Dijkstra:
 4. Do the loop until we visit all the nodes.
    
 Method of Bellman-Ford:
-1. TBW
+1. First initialize the distances from all nodes to the starting point, set the distance from the starting point to itself to 0, and set the rest of the distances to infinity.
+2. A map named prefixor_map is set to record the previous node corresponding to each node in the path, which can facilitate us to output the final path result.
+3. Relax each edge until the length of each edge reaches the minimum.
 
 **You should create a table like below, which includes the runtime of the algorithm for several examples.**
 
-| Point A to Point B      | Dijkstra | Bellman Ford| Bellman Ford optimized|
-| -------------------- | ----------- |-------|-----|
-|                      |  t1         | t2    |   t3  |
+| Point A to Point B      | Dijkstra | Bellman Ford|
+| -------------------- | ----------- |-------|
+| Ralphs to Target     |  39ms       | 7084ms     |
+| Chase to Ralphs      |  152ms      | 17901ms    |
+| Holbox to Chase      |  32ms       | 16855ms    |
 
 Reason: the time complexity of Dijkstra is O(m logn + n logn), and the time complexity of Bellman_Ford is O(n*m). When the number of nodes is large like here 18359, the time between them has a huge difference. And because we can stop early, the longer the path is, the longer the running time will be.
 

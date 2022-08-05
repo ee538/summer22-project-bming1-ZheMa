@@ -223,10 +223,10 @@ std::vector<std::string> TrojanMap::GetAllCategories()
  * @param  {std::string} category          : category name (attribute)
  * @return {std::pair<double, double>}     : (lat, lon)
  */
-std::vector<pair<double, double>> TrojanMap::GetAllLocationsFromCategory(
+std::vector<pair<double, double> > TrojanMap::GetAllLocationsFromCategory(
     std::string category)
 {
-  vector<pair<double, double>> result;
+  vector<pair<double, double> > result;
   for (auto &node : data)
   {
     for (auto &k : node.second.attributes)
@@ -236,11 +236,11 @@ std::vector<pair<double, double>> TrojanMap::GetAllLocationsFromCategory(
         result.push_back(make_pair(node.second.lat, node.second.lon));
       }
     }
-    if (result.empty())
+  }
+  if (result.empty())
     {
       return {};
     }
-  }
   return result;
 }
 
@@ -256,15 +256,24 @@ std::vector<pair<double, double>> TrojanMap::GetAllLocationsFromCategory(
 std::pair<double, double> TrojanMap::GetLocationRegex(std::regex location)
 {
   pair<double, double> result;
-  std::regex location_regex("[A-Z]+[a-z]*'/*[A-Z][a-z]*[0-9]*");
   std::smatch base_match;
+  int i=0;
+  auto menu = "*************************Results******************************\n";
+  std::cout << menu;
   for (auto &node : data)
   {
-    if (std::regex_match(node.second.name, base_match, location_regex))
+    if (std::regex_match(node.second.name, base_match, location))
     {
+      i++;
       result = make_pair(node.second.lat, node.second.lon);
+      cout<<base_match[0]<<": "<< result.first << ", " << result.second<<endl; 
     }
   }
+  if (i==0)
+  {
+    cout<<"not match !"<<endl;
+  }
+
   return result;
 }
 

@@ -101,7 +101,20 @@ void MapUI::PrintMenu() {
         "* 3. Find all location categories                             \n"
         "**************************************************************\n";
     std::cout << menu << std::endl;
-    // fill in here  
+    auto start = std::chrono::high_resolution_clock::now();
+    auto results = map.GetAllCategories();
+    auto stop = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
+    menu = "*************************Results******************************\n";
+    std::cout << menu;
+    for (auto i : results)
+    {
+      std::cout << i << std::endl;
+    }
+    std::cout << "size of categories is : " << results.size() << std::endl;
+    menu = "**************************************************************\n";
+    std::cout << menu;
+    std::cout << "Time taken by function: " << duration.count()/1000 << " ms" << std::endl << std::endl;
     PrintMenu();
     break;
   }
@@ -112,7 +125,23 @@ void MapUI::PrintMenu() {
         "* 4. Get all locations in a category                           \n"
         "**************************************************************\n";
     std::cout << menu << std::endl;
-    // fill in here 
+    menu = "Please input a category (eg:fuel):";
+    std::cout << menu;
+    getline(std::cin, input);
+    auto start = std::chrono::high_resolution_clock::now();
+    auto results = map.GetAllLocationsFromCategory(input);
+    auto stop = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
+    menu = "*************************Results******************************\n";
+    std::cout << menu;
+    for (int i = 0; i < results.size(); i++)
+    {
+      std::cout << "("<<results[i].first << ", " << results[i].second <<")"<< std::endl;
+    }
+    std::cout << "size of locations from categories is : " << results.size() << std::endl;
+    menu = "**************************************************************\n";
+    std::cout << menu;
+    std::cout << "Time taken by function: " << duration.count()/1000 << " ms" << std::endl << std::endl;
     PrintMenu();
     break;
   }
@@ -123,7 +152,17 @@ void MapUI::PrintMenu() {
         "* 5. Get locations using a regular expression                 \n"
         "**************************************************************\n";
     std::cout << menu << std::endl;
-    // fill in here
+    menu = "regular expression of a location's name eg(R.*):";
+    std::cout << menu;
+    getline(std::cin, input);
+    std::regex position(input);
+    auto start = std::chrono::high_resolution_clock::now();
+    auto results = map.GetLocationRegex(position);
+    auto stop = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
+    menu = "**************************************************************\n";
+    std::cout << menu;
+    std::cout << "Time taken by function: " << duration.count()/1000 << " ms" << std::endl << std::endl;
     PrintMenu();
     break;
   }
